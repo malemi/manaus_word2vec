@@ -1,4 +1,7 @@
 
+
+# Almost cut & paste from NLTK
+
 # Libraries for Lev distance
 def _edit_dist_init(len1, len2):
     lev = []
