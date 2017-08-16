@@ -3,19 +3,7 @@
 
 # Word2vec from Manaus
 # =============
-# 
-# Originally from [Udacity Course](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/udacity/5_word2vec.ipynb) assignment 5.
-# 
-# What it does
-# ------------
-# 
-# Accept list of lists of keyword and predict the similarity of keywords according to their companions.
-#
-# GPU or CPU?
-# ----------
-# 
-# Unless you have NVidia, it's CPU because Tensorflow does not support OpenCL. At the moment it does not work with [tf-coriander](https://github.com/hughperkins/tf-coriander).
-# 
+
 
 from __future__ import print_function
 from __future__ import division
@@ -32,6 +20,7 @@ import json
 from matplotlib import pylab
 from six.moves import range
 from six.moves.urllib.request import urlretrieve
+from utils.distances import syn_distance
 
 filename = 'xyz.tsv'
 # The format of our input file is, for each line:
@@ -79,22 +68,10 @@ print(sentences_index[:8])
 print(sentences_index_dict[(0, 0)])
 
 
-#### Add possible synonyms
-
-def syn_distance(w1, w2, ngram=3):
-    steps = max(len(w1), len(w2))
-    print('steps: ', steps)
-    d = 0.0
-    for s in range(steps-ngram):
-        print('prima', s, d)
-        print('distance for:', w1[s:s+ngram], w2[s:s+ngram], ': ', edit_distance(w1[s:s+ngram], w2[s:s+ngram],  transpositions=True) )
-        d += edit_distance(w1[s:s+ngram], w2[s:s+ngram],  transpositions=True) * math.exp(-s)
-        print('dopo', s, d)
-    return d
-syn_distance('instructions', 'installtion', 4)
-
-
 def synonyms_candidates(words, cut=0.1, ngram=3):
+    '''Produces a list of possible synonyms.
+    words: list of words
+    '''
     words = set(words)
     syn_sentences = []
     while len(words) > 1:
