@@ -1,7 +1,7 @@
 # word2vec for [manaus](https://github.com/GetJenny/manaus)
 
 This is a word2vec implementation (just a draft, taken from the Udacity course) we used in conjunction to
-[manaus](https://github.com/GetJenny/manaus). (manaus is a collection of libraries (in Scala) written for [StarChat](https://github.com/GetJenny/starchat). The main feature is the extraction of keywords, used in [StarChat](https://github.com/GetJenny/starchat) for identifying similar questions.)
+[manaus](https://github.com/GetJenny/manaus). (manaus is a collection of libraries written for [StarChat](https://github.com/GetJenny/starchat). The main feature is the extraction of keywords, used in [StarChat](https://github.com/GetJenny/starchat) for identifying similar questions.)
 
 ## Features
 
