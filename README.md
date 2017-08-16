@@ -1,11 +1,11 @@
 # word2vec for [manaus](https://github.com/GetJenny/manaus)
 
-
-[manaus](https://github.com/GetJenny/manaus) is a collection of libraries (in Scala) written for [StarChat](https://github.com/GetJenny/starchat). The main feature is the extraction of keywords, used in [StarChat](https://github.com/GetJenny/starchat) for identifying similar questions.
+This is a word2vec implementation (just a draft, taken from the Udacity course) we used in conjunction to
+[manaus](https://github.com/GetJenny/manaus). (manaus is a collection of libraries (in Scala) written for [StarChat](https://github.com/GetJenny/starchat). The main feature is the extraction of keywords, used in [StarChat](https://github.com/GetJenny/starchat) for identifying similar questions.)
 
 ## Features
 
-It's just a draft, taken from the Udacity course. But it's been modified in order to work with small dataset, and we have implemented the following features.
+It's been modified in order to work with small dataset, and we have implemented the following features.
 
 ### Keywords
 Given the fact that logs for chatbots are (at least in our case) not to big, we want to avoid filters in words and use only the most significative ones –hence the keywords.
